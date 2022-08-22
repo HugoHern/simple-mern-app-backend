@@ -47,8 +47,8 @@ router.put('/:id', (req, res) => {
 // delete a book by its id
 router.delete('/:id', (req, res) => {
     Book.findByIdAndRemove(req.params.id, req.body)
-      .then(book => res.json({ mgs: 'BOOK DELETED!!!!' }))
+      .then(book => res.json({ message: 'BOOK DELETED!!!!' }))
       .catch(err => res.status(404).json({ error: 'No Book Found With This ID' }));
   })
 
-  module.exports = router
+module.exports = router
